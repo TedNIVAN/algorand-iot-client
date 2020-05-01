@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALGORAND TEMPERATURE MONITOR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+    <script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.7/all/gauge.min.js"></script>
+    <script src="algosdk.min.js"></script>
+</head>
+
+<body>
+    <section class="hero is-large">
+
+        <nav class="navbar has-background-light">
+            <div class="container">
+                <div class="navbar-brand " style="font-family: 'Fugaz One'">
+  
+                    <span class="navbar-item"><img src="algorand-algo-logo.png" alt="">TEMPERATURE MONITOR</span>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="field has-addons">
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="TRANSACTION ID">
+                                </div>
+                                <div class="control">
+                                    <button id="btn" class="button is-dark">
+                                        Start
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="block" class="container has-text-centered has-background-light subtitle"
+            style="margin-top: 5vh; display: none;">
+            <canvas data-type="linear-gauge" data-width="160" data-height="600" data-border-radius="20" data-borders="0"
+                data-bar-stroke-width="20" data-minor-ticks="10" data-major-ticks="0,10,20,30,40,50,60,70,80,90,100"
+                data-value="0" data-units="°C" data-color-value-box-shadow="false"></canvas>
+        </div>
+        <div id="load" class="container has-text-centered has-background-light"
+            style="margin-top: 40vh; display: none;">
+            <button class="button is-primary is-large is-loading">Loading</button>
+        </div>
+
+    </section>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
